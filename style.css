@@ -1,0 +1,225 @@
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0;
+}
+
+h3 {
+    margin: -.7rem 0 .7rem;
+}
+
+body {
+    background-color: rgb(218, 218, 218);
+}
+
+#creation-div {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+header {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#form-div {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#preview-div {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+#form-div, #preview-div, #display-div {
+    background-color: rgb(151, 193, 151);
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: -2px 5px 4px 4px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgb(116, 147, 116);
+}
+
+#top-text-position-radio-left, #bottom-text-position-radio-left {
+    margin-left: 0.2rem;
+}
+
+.meme-text-p {
+    max-width: 60%;
+    width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+input, label, select {
+    vertical-align: middle;
+}
+
+input[type="text"] {
+    width: 13rem;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-left: -1.5rem;
+    margin-top: 0.1rem;
+}
+
+li:first-of-type {
+    margin-top: -1rem;
+}
+
+li:last-of-type {
+    margin-bottom: -0.8rem;
+}
+
+input, select {
+    margin: .3rem 0;
+}
+
+p {
+    margin: 0;
+}
+
+#publish-button-div {
+    width: 100%;
+}
+
+#meme-publish-button {
+    margin-top: .5rem;
+    margin-left: 1rem;
+    margin-bottom: 0;
+    padding: 0.2rem 0.4rem;
+}
+
+#meme-preview-pin {
+    transition: top 500ms, left 500ms;
+}
+
+.meme-pin {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.meme-preview-transition {
+    top: 550px;
+    left: -400px;
+}
+
+.meme-image-container {
+    position: absolute;
+}
+
+.meme-image{
+    display: block;
+    max-width: 700px;
+    max-height: 450px;
+    padding: 0;
+}
+
+.meme-text-container {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    font-size: 2.2rem;
+    z-index: 1;
+}
+
+.meme-text-div-top {
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: flex-start;
+}
+
+.meme-text-div-bottom {
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Classes for meme output: */
+
+/* Classes for text position: */
+
+.meme-text-center {
+    justify-content: center;
+}
+
+.meme-text-draggable {
+    position: relative;
+}
+
+.meme-text-p-draggable {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.meme-text-p-draggable:hover {
+    cursor: grab;
+    outline: 1px dashed black;
+}
+
+/* Classes for text justification: */
+
+.justification-left {
+    text-align: left;
+}
+
+.justification-center {
+    text-align: center;
+}
+
+.justification-right {
+    text-align: right;
+}
+
+/* Classes for text font */
+
+.arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.acme {
+    font-family: 'Acme', sans-serif;
+}
+
+.anton {
+    font-family: 'Anton', sans-serif;
+}
+
+.pt-sans-narrow {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.signika-negative {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+/* Classes for font color */
+
+.text-color-white {
+    color: white;
+}
+
+.text-color-black {
+    color: black;
+}
+
+.text-color-white-outlined {
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+
+.delete-button {
+    margin: .2rem 1rem 1rem;
+    padding: .2rem 1rem;
+    font-size: 1rem;
+}

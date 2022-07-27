@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme-tastic!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Anton&family=PT+Sans+Narrow:wght@700&family=Signika+Negative:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="creation-div">
+        <header>
+            <h1 class="anton text-color-white-outlined">Meme-tastic!</h1>
+        </header>
+        <div id="form-div">
+            <h3>Meme Elements:</h3>
+            <form>
+                <label for="image-input-field">Image URL:</label>
+                <input type="url" id="image-input-field" name="image">
+                <button id="image-upload-button" type="submit">Upload</button>
+                <br>
+            </form>
+            <form>
+                <label for="top-text-input-field">Top Text:</label>
+                <input type="text" id="top-text-input-field">
+                <br>
+                <ul>
+                    <li>
+                        <label>Position:</label>
+                        <input type="radio" value="center" name="top-text-position" id="top-text-position-radio-center" checked>
+                        <label for="top-text-position-radio-center">center</label>
+                        <input type="radio" value="draggable" name="top-text-position" id="top-text-position-radio-draggable">
+                        <label for="top-text-position-radio-draggable">draggable</label>
+                    </li>
+                    <li>
+                        <label for="top-text-width-slider">Width (for text wrap):</label>
+                        <input type="range" id="top-text-width-slider" min="20" max="100" step="5" value="60">
+                    </li>
+                    <li>
+                        <label>Text Justification:</label>
+                        <input type="radio" value="left" name="top-text-justification" id="top-text-justification-radio-left">
+                        <label for="top-text-justification-radio-left">left</label>
+                        <input type="radio" value="center" name="top-text-justification" id="top-text-justification-radio-center" checked>
+                        <label for="top-text-justification-radio-center">center</label>
+                        <input type="radio" value="right" name="top-text-justification" id="top-text-justification-radio-right">
+                        <label for="top-text-justification-radio-right">right</label>
+                    </li>
+                </ul>
+            </form>
+            <form>
+                <label for="bottom-text-input-field">Bottom Text:</label>
+                <input type="text" id="bottom-text-input-field">
+                <br>
+                <ul>
+                    <li>
+                        <label>Position:</label>
+                        <input type="radio" value="center" name="bottom-text-position" id="bottom-text-position-radio-center" checked>
+                        <label for="bottom-text-position-radio-center">center</label>
+                        <input type="radio" value="draggable" name="bottom-text-position" id="bottom-text-position-radio-draggable">
+                        <label for="bottom-text-position-radio-draggable">draggable</label>
+                    </li>
+                    <li>
+                        <label for="bottom-text-width-slider">Width (for text wrap):</label>
+                        <input type="range" id="bottom-text-width-slider" min="20" max="100" step="5" value="60">
+                    </li>
+                    <li>
+                        <label>Text Justification:</label>
+                        <input type="radio" value="left" name="bottom-text-justification" id="bottom-text-justification-radio-left">
+                        <label for="bottom-text-justification-radio-left">left</label>
+                        <input type="radio" value="center" name="bottom-text-justification" id="bottom-text-justification-radio-center" checked>
+                        <label for="bottom-text-justification-radio-center">center</label>
+                        <input type="radio" value="right" name="bottom-text-justification" id="bottom-text-justification-radio-right">
+                        <label for="bottom-text-justification-radio-right">right</label> 
+                    </li>
+                </ul>
+            </form>
+            <form>
+                <label for="font-select">Select Font:</label>
+                <select id="font-select">
+                    <option value="arial">Arial</option>
+                    <option value="acme">Acme</option>
+                    <option value="anton">Anton</option>
+                    <option value="pt-sans-narrow">PT Sans Narrow</option>
+                    <option value="signika-negative">Signika Negative</option>
+                </select>
+                <br>
+                <label for="font-size-slider">Font Size:</label>
+                <input type="range" min="0.8" max="6" step="0.2" id="font-size-slider" value="2.2">
+                <br>
+                <label for="font-color-select">Font Color:</label>
+                <select id="font-color-select">
+                    <option value="black">black</option>
+                    <option value="white">white</option>
+                    <option value="white-outlined">white with black border</option>
+                </select>
+                <br>
+                <div id="publish-button-div">
+                    <button id="meme-publish-button" type="submit">Save and Clear Form</button>
+                </div>
+            </form>
+        </div>
+        <div id="preview-div">
+            <h3>Preview:</h3>
+            <div id="meme-preview-pin" class="meme-pin">
+                <div id="meme-preview-image-container" class="meme-image-container">
+                    <img id="meme-img-preview" class="meme-image">
+                </div>
+                <div id="meme-preview-text-container" class="meme-text-container arial">
+                    <div id="meme-preview-top" class="meme-text-div-top meme-text-center">
+                        <p id="top-text-p" class="meme-text-p justification-center"></p>
+                    </div>
+                    <div id="meme-preview-bottom" class="meme-text-div-bottom meme-text-center">
+                        <p id="bottom-text-p" class="meme-text-p justification-center"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="display-div">
+        <h3>Saved Memes:</h3>
+        <div id="saved-meme-container"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
