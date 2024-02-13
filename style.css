@@ -106,6 +106,7 @@ p {
     position: relative;
     top: 0;
     left: 0;
+    width: fit-content;
 }
 
 .meme-preview-transition {

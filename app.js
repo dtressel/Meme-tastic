@@ -212,11 +212,11 @@ function draggableMouseUp(currentP, mouseMoveEventListener) {
 }
 
 // Big function which creates the saved meme that will appear in the saved meme area and deletes
-    //the meme in the preview area.
+    // the meme in the preview area.
 function saveMemeToDisplay(event) {
     // for transition effect to saved area: 
     memePreviewPin.classList.add('meme-preview-transition');
-    //Save Meme Information:
+    // Save Meme Information:
     event.preventDefault();
     currentMemeObject.topText = topTextInputField.value;
     currentMemeObject.topTextWidth = topTextWidthSlider.value;
@@ -229,6 +229,7 @@ function saveMemeToDisplay(event) {
     currentMemeObject.containerWidth = memePreviewTextContainer.clientWidth;
 
     //create div skeleton:
+    const stdSavedMemeContainer = document.createElement('div');
     const stdMemePin = document.createElement('div');
     const stdMemeImageContainer = document.createElement('div');
     const stdMemeImage = document.createElement('img');
@@ -238,6 +239,7 @@ function saveMemeToDisplay(event) {
     const stdMemeBottomTextDiv = document.createElement('div');
     const stdMemeBottomTextP = document.createElement('p');
 
+    stdSavedMemeContainer.append(stdMemePin);
     stdMemePin.append(stdMemeImageContainer, stdMemeTextContainer);
     stdMemeImageContainer.append(stdMemeImage);
     stdMemeTextContainer.append(stdMemeTopTextDiv, stdMemeBottomTextDiv);
@@ -245,7 +247,8 @@ function saveMemeToDisplay(event) {
     stdMemeBottomTextDiv.append(stdMemeBottomTextP);
 
     //add meme elements
-    stdMemePin.classList.add('meme-pin', 'saved-meme');
+    stdSavedMemeContainer.classList.add('saved-meme-container');
+    stdMemePin.classList.add('meme-pin');
     stdMemeImageContainer.classList.add('meme-image-container');
     stdMemeImage.classList.add('meme-image');
     stdMemeTextContainer.classList.add('meme-text-container', currentMemeObject.fontFamily, `text-color-${currentMemeObject.fontColor}`);
@@ -284,7 +287,7 @@ function saveMemeToDisplay(event) {
     function deleteMeme(event) {
         event.target.parentElement.remove();
     }
-    stdMemePin.append(deleteButton);
+    stdSavedMemeContainer.append(deleteButton);
 
     //timeout to make sure visual transition is complete before removing preview meme
     setTimeout(finishTransition, 500);
